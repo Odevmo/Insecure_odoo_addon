@@ -1,0 +1,10 @@
+<odoo>
+  <template id="insecure_template" name="Insecure Template">
+    <t t-name="insecure.addon.template">
+      <!-- 6. t-raw on unsanitized field -->
+      <div>
+        <t t-raw="record.data"/>
+      </div>
+    </t>
+  </template>
+</odoo>

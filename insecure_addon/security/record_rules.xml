@@ -1,0 +1,12 @@
+<odoo>
+  <!-- 2. Permissive record rule with empty domain -->
+  <record id="insecure_model_rule_all" model="ir.rule">
+    <field name="name">Insecure: allow all</field>
+    <field name="model_id" ref="model_insecure_model"/>
+    <field name="domain_force">[]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+</odoo>
