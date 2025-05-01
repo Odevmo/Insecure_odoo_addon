@@ -13,10 +13,17 @@ class InsecureModel(models.Model):
         for rec in self:
             rec.write({'name': 'Hacked'})  # no check_group or sudo()
 
-    # 4. Unsafe SQL
-    def raw_sql(self, keyword):
-        # vulnerable to SQL injection
-        self.env.cr.execute("SELECT * FROM insecure_model WHERE name = '%s'" % keyword)
+    # 4.1 Direct ORM Bypass
+    def raw_bypass(self):
+        # Bypasses the ORM entirely (no injection risk here, but skips ACLs & business logic)
+        self.env.cr.execute('SELECT id FROM insecure_model')
+        return [row[0] for row in self.env.cr.fetchall()]
+
+    # 4.2 SQL Injection Vulnerability
+    def raw_injection(self, keyword):
+        # Vulnerable: user input interpolated via % → SQL injection possible
+        query = "SELECT * FROM insecure_model WHERE name = '%s'" % keyword
+        self.env.cr.execute(query)
         return self.env.cr.fetchall()
 
     # 5. Unsafe eval
