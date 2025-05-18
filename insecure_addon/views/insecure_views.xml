@@ -1,35 +1,37 @@
 <!-- insecure_addon/views/insecure_views.xml -->
 <odoo>
-  <record id="view_insecure_model_form" model="ir.ui.view">
-    <field name="name">insecure.model.form</field>
-    <field name="model">insecure.model</field>
-    <field name="arch" type="xml">
-      <form string="Insecure Model">
-        <sheet>
-          <group>
-            <field name="name"/>
-            <field name="data"/>
-          </group>
-          <footer>
-            <!-- Trigger unsafe methods for demo -->
-            <button name="do_unchecked_write" type="object"
-                    string="Unchecked Write"/>
-            <button name="raw_bypass" type="object" string="Raw Bypass"/>
-            <button name="unsafe_getattr" type="object"
-                    string="Unsafe getattr"
-                    context="{'field_name': 'data'}"/>
-          </footer>
-        </sheet>
-      </form>
+    <record id="view_insecure_model_form" model="ir.ui.view">
+        <field name="name">insecure.model.form</field>
+        <field name="model">insecure.model</field>
+        <field name="arch" type="xml">
+            <form string="Insecure Model">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="data"/>
+                    </group>
+                    <footer>
+                        <!-- Trigger unsafe methods for demo -->
+                        <button name="do_unchecked_write" type="object"
+                                string="Unchecked Write"/>
+                        <button name="raw_bypass" type="object" string="Raw Bypass"/>
+                        <button name="unsafe_getattr" type="object"
+                                string="Unsafe getattr"
+                                context="{'field_name': 'data'}"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
     </record>
 
-  <record id="view_insecure_model_list" model="ir.ui.view">
-    <field name="name">insecure.model.list</field>
-    <field name="model">insecure.model</field>
-    <field name="arch" type="xml">
-      <list>
-        <field name="name"/>
-        <field name="data"/>
-      </list>
+    <record id="view_insecure_model_list" model="ir.ui.view">
+        <field name="name">insecure.model.list</field>
+        <field name="model">insecure.model</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="data"/>
+            </list>
+        </field>
     </record>
 </odoo>
