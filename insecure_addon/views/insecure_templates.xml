@@ -1,8 +1,10 @@
+<!-- insecure_addon/views/insecure_templates.xml -->
 <odoo>
-  <template id="insecure_template" name="Insecure Template">
-    <t t-name="insecure.addon.template">
-      <!-- 6. t-raw on unsanitized field -->
+  <template id="insecure_addon_template" name="Insecure Demo Template">
+    <t t-name="insecure_addon.template">
+      <h1>XSS Demo</h1>
       <div>
+        <!-- Unsafe raw rendering of data -->
         <t t-raw="record.data"/>
       </div>
     </t>

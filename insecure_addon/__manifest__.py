@@ -14,9 +14,11 @@
     """,
     'author': "Test Suite",
     'license': 'LGPL-3',
-    'depends': ['base'],
+    'depends': ['base', 'web'],
     'data': [
         'security/record_rules.xml',
+        'views/insecure_menus.xml',
+        'views/insecure_views.xml',
         'views/insecure_templates.xml',
     ],
     'installable': True,

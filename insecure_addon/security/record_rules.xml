@@ -1,5 +1,6 @@
+<!-- insecure_addon/security/record_rules.xml -->
 <odoo>
-  <!-- 2. Permissive record rule with empty domain -->
+  <!-- Overly Permissive Record Rule -->
   <record id="insecure_model_rule_all" model="ir.rule">
     <field name="name">Insecure: allow all</field>
     <field name="model_id" ref="model_insecure_model"/>

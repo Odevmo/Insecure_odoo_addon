@@ -1,0 +1,15 @@
+<!-- insecure_addon/views/insecure_menus.xml -->
+<odoo>
+  <menuitem id="menu_insecure_root" name="Insecure Addon"/>
+  <menuitem id="menu_insecure_model" name="Insecure Models"
+            parent="menu_insecure_root"/>
+  <record id="action_insecure_model" model="ir.actions.act_window">
+    <field name="name">Insecure Models</field>
+    <field name="res_model">insecure.model</field>
+    <field name="view_mode">list,form</field>
+  </record>
+  <menuitem id="menu_insecure_model_items"
+            name="Insecure Items"
+            parent="menu_insecure_model"
+            action="action_insecure_model"/>
+</odoo>
