@@ -16,10 +16,11 @@
     'license': 'LGPL-3',
     'depends': ['base', 'web'],
     'data': [
-        'security/record_rules.xml',
+        'security/ir.model.access.csv',
         'views/insecure_menus.xml',
         'views/insecure_views.xml',
         'views/insecure_templates.xml',
+        'security/record_rules.xml',
     ],
     'installable': True,
 }

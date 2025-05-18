@@ -1,10 +1,10 @@
-<!-- insecure_addon/views/insecure_templates.xml -->
 <odoo>
   <template id="insecure_addon_template" name="Insecure Demo Template">
-    <t t-name="insecure_addon.template">
+    <!-- External ID: insecure_addon.insecure_addon_template -->
+    <t t-name="insecure_addon.insecure_addon_template">
       <h1>XSS Demo</h1>
       <div>
-        <!-- Unsafe raw rendering of data -->
+        <!-- ⚠️ Intentionally vulnerable: raw unescaped rendering of user input -->
         <t t-raw="record.data"/>
       </div>
     </t>
